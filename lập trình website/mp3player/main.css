@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	
+	background-image: linear-gradient(to right, #4daf54, #3d8880);
+}
+
+.music{
+  max-width: 300px;
+  margin: 0 auto;
+  height: 320px;
+  margin-top: 50px;
+  border-radius: 12px;
+  background-color: #585a5f;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 18px;
+  transition: 0.5s;
+  margin-top: 150px;
+}
+.music:hover{
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 12px;
+  background-color: #585a5f;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 18px;
+  margin-top: 150px;
+  height: 500px;
+}
+.music-thumb{
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+}
+
+@keyframes spinner{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.music-thumb.is-playing{
+  animation: spinner 5s infinite linear;
+}
+
+.music-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100rem;
+  box-shadow: 0 0 0 3px #ffb86c,0 0 0 6px white,0 0 0 9px #ff6bcb ;
+  
+}
+.music-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.timer{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+}
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 60px;
+  font-size: 35px;
+}
+.range{
+  
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    margin-bottom: 30px;
+}
+.range::-webkit-slider-runnable-track{
+  
+    width: 100%;
+    height: 4px;
+    background-color: #eeee;
+}
+
+.range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 100rem;
+  box-shadow: 0 0 0 3px white, 0 0 0 6px rgba(100, 100, 111, 0.05);
+  background-color: blue;
+  margin-top: -6px;
+}
+.play {
+  position: relative;
+}
+.inner{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 100rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; 
+  font-size: 25px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 2;
+}
+.play:before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right bottom,#ff6bcb,#ffb86c);
+  transform: scale(1.2);
+  border-radius: 100rem;
+}
+.rewind,.forward{
+  cursor: pointer;
+}
+.name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.music-name{
+  transition: 0.5s;
+}
+.music-name:hover{
+  color: #ff6bcb;
+  transform:scale(1.2);
+}
+.name span{
+  color: rgb(121, 5, 5);
+}
+.c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.icon i{
+  transition: 0.5s;
+}
+.icon i:hover{
+  color: rgb(129, 2, 2);
+  transform: scale(1.2);
+}
+.content-icon a{
+  color: black;
+  font-size: 30px;
+}
+.name{
+  margin-top: 120px;
+  padding-top: 20px;
+}
+.content-icon{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 0 30px;
+ font-size: 25px;
+ transition: 0.5s;
+}
+.content-icon i:hover{
+  color: rgb(211, 15, 15);
+  transform: scale(1.5);
+}
+.name,.c,.cc,.content-icon{
+
+  font-weight: bold;
+  visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	transition-delay: 0.4s;
+}
+.music:hover .name, .music:hover .c,.music:hover .cc,.music:hover .content-icon{
+  margin: 5px;
+	visibility: visible;
+	opacity: 100;
+	
+}
+.music:hover .name{
+  margin-top:0px;
+}
+
+

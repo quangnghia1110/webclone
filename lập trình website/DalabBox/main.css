@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+	font-family:Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right,#e66465, #9198e5);
+}
+.con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Tạo khung*/
+.music{
+    max-width: 300px;
+    margin: 0 auto;
+    height: 350px;
+    margin-top: 50px;
+    border-radius: 12px;
+    background-color: gray;
+    padding: 18px;
+    transition: 0.5s;
+    margin-top: 150px;
+    transition:0.5s ease;  
+  }
+  .music:hover{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 12px;
+    background-color: gray;
+    padding: 18px;
+    margin-top: 150px;
+    height: 450px;
+    width: 350px;
+  }
+/*Kích thước ảnh*/
+.music-thumb{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+  }
+.music-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100rem;
+    box-shadow: 0 0 0 3px #ffb86c,0 0 0 6px white,0 0 0 9px #8B0000; ;
+    
+  }
+/*Cho ảnh có thể xoay*/
+@keyframes spinner{
+    to{
+      transform: rotate(360deg);
+    }
+  }
+  .music-thumb.is-playing{
+    animation: spinner 5s infinite linear;
+  }
+/*Định dạng tên*/
+.music-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.4s;
+    margin-bottom: 25px;
+}
+.music-name:hover{
+    color: #8B0000;;
+    transform:scale(1.2);
+}
+/*Làm thanh chạy thời gian*/
+  .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 60px;
+    font-size: 35px;
+  }
+
+  .range{
+    
+      -webkit-appearance: none;
+      width: 100%; 
+      background: transparent;
+      margin-bottom: 30px;
+  }
+  .range::-webkit-slider-runnable-track{
+    
+      width: 100%;
+      height: 4px;
+      background-color: rgba(228, 217, 217, 0.933);
+  }
+  
+  .range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+    box-shadow: 0 0 0 3px white, 0 0 0 6px rgba(100, 100, 111, 0.05);
+    background-color: #8B0000;;
+    margin-top: -6px;
+  }
+/*Làm mục thời gian*/
+.timer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+/*Căn chỉnh các nút*/
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 60px;
+    font-size: 35px;
+  }
+  .icon i{
+    transition: 0.5s;
+  }
+  .icon i:hover{
+    color: #8B0000;
+    transform: scale(1.2);
+  }
+  .play {
+    position: relative;
+  }
+  .inner{
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 100rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+    font-size: 35px;
+    margin-left: 5px;
+    position: relative;
+    z-index: 2;
+  }
+  .play:before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right bottom,#8B0000,#ffb86c);
+    border-radius: 100rem;
+  }
+  .rewind,.forward{
+    cursor: pointer;
+  }
+/*Làm các nút social*/ 
+  .content-icon{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0 30px;
+   font-size: 25px;
+   transition: 0.5s;
+  }
+  .content-icon i{
+      color: black;
+      font-size: 40px;
+      margin-top: 27px;
+      transition: 0.5s;
+  }
+
+  .content-icon i:hover{
+    color: rgb(211, 15, 15);
+    transform: scale(1.5);
+  }
+  /*Làm tên main*/
+  .name{
+    margin-top: 5px;
+    padding-top: 20px;
+    font-style: italic;;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .name span{
+      color: rgb(90, 3, 3);;
+  }
+  /*Giấu hover*/
+  .name,.content-icon{
+    font-weight: bold;
+    visibility: hidden;
+      opacity: 0;
+      transition: 0.5s;
+      transition-delay: 0.4s;
+  }
+  .music:hover .name,.music:hover .content-icon{
+    margin: 5px;
+      visibility: visible;
+      opacity: 100;
+      
+  }
+  .music:hover .name{
+    margin-top:0px;
+  }
+ 
+  
+ 
+ 
+
+  
+
+
+  
